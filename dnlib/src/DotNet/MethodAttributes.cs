@@ -3,10 +3,10 @@
 using System;
 
 namespace dnlib.DotNet {
-	/// <summary>
-	/// Method attributes, see CorHdr.h/CorMethodAttr
-	/// </summary>
-	[Flags]
+    /// <summary>
+    /// 方法属性，请参阅CorHdr.h / CorMethodAttr
+    /// </summary>
+    [Flags]
 	public enum MethodAttributes : ushort {
 		/// <summary>member access mask - Use this mask to retrieve accessibility information.</summary>
 		MemberAccessMask	= 0x0007,
@@ -24,22 +24,22 @@ namespace dnlib.DotNet {
 		Family				= 0x0004,
 		/// <summary>Accessibly by sub-types anywhere, plus anyone in assembly.</summary>
 		FamORAssem			= 0x0005,
-		/// <summary>Accessibly by anyone who has visibility to this scope.</summary>
-		Public				= 0x0006,
+        /// <summary>任何能够了解此范围的人都可以访问。</summary>
+        Public = 0x0006,
 
-		/// <summary>Defined on type, else per instance.</summary>
-		Static				= 0x0010,
+        /// <summary>在类型上定义，否则按实例定义。</summary>
+        Static = 0x0010,
 		/// <summary>Method may not be overridden.</summary>
 		Final				= 0x0020,
 		/// <summary>Method virtual.</summary>
 		Virtual				= 0x0040,
-		/// <summary>Method hides by name+sig, else just by name.</summary>
-		HideBySig			= 0x0080,
+        /// <summary>方法按名称+ sig隐藏，否则只按名称隐藏。</summary>
+        HideBySig = 0x0080,
 
 		/// <summary>vtable layout mask - Use this mask to retrieve vtable attributes.</summary>
 		VtableLayoutMask	= 0x0100,
-		/// <summary>The default.</summary>
-		ReuseSlot			= 0x0000,
+        /// <summary>默认。</summary>
+        ReuseSlot = 0x0000,
 		/// <summary>Method always gets a new slot in the vtable.</summary>
 		NewSlot				= 0x0100,
 

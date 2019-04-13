@@ -7,10 +7,10 @@ using dnlib.PE;
 using dnlib.Threading;
 
 namespace dnlib.DotNet {
-	/// <summary>
-	/// A high-level representation of a row in the Field table
-	/// </summary>
-	public abstract class FieldDef : IHasConstant, IHasCustomAttribute, IHasFieldMarshal, IMemberForwarded, IField, ITokenOperand, IMemberDef {
+    /// <summary>
+    /// Field表中行的高级表示形式
+    /// </summary>
+    public abstract class FieldDef : IHasConstant, IHasCustomAttribute, IHasFieldMarshal, IMemberForwarded, IField, ITokenOperand, IMemberDef {
 		/// <summary>
 		/// The row id in its table
 		/// </summary>

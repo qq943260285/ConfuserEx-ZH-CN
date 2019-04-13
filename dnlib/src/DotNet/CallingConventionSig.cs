@@ -321,10 +321,10 @@ namespace dnlib.DotNet {
 		}
 	}
 
-	/// <summary>
-	/// A method signature
-	/// </summary>
-	public sealed class MethodSig : MethodBaseSig {
+    /// <summary>
+    /// 方法签名
+    /// </summary>
+    public sealed class MethodSig : MethodBaseSig {
 		uint origToken;
 
 		/// <summary>
@@ -347,19 +347,19 @@ namespace dnlib.DotNet {
         /// <summary>
         /// 创建一个静态MethodSig
         /// </summary>
-        /// <param name="retType">Return type</param>
+        /// <param name="retType">返回类型</param>
         /// <param name="argType1">Arg type #1</param>
         public static MethodSig CreateStatic(TypeSig retType, TypeSig argType1) {
 			return new MethodSig(CallingConvention.Default, 0, retType, argType1);
 		}
 
-		/// <summary>
-		/// Creates a static MethodSig
-		/// </summary>
-		/// <param name="retType">Return type</param>
-		/// <param name="argType1">Arg type #1</param>
-		/// <param name="argType2">Arg type #2</param>
-		public static MethodSig CreateStatic(TypeSig retType, TypeSig argType1, TypeSig argType2) {
+        /// <summary>
+        ///创建一个静态MethodSig
+        /// </summary>
+        /// <param name="retType">返回类型</param>
+        /// <param name="argType1">Arg type #1</param>
+        /// <param name="argType2">Arg type #2</param>
+        public static MethodSig CreateStatic(TypeSig retType, TypeSig argType1, TypeSig argType2) {
 			return new MethodSig(CallingConvention.Default, 0, retType, argType1, argType2);
 		}
 
@@ -383,11 +383,11 @@ namespace dnlib.DotNet {
 			return new MethodSig(CallingConvention.Default, 0, retType, argTypes);
 		}
 
-		/// <summary>
-		/// Creates an instance MethodSig
-		/// </summary>
-		/// <param name="retType">Return type</param>
-		public static MethodSig CreateInstance(TypeSig retType) {
+        /// <summary>
+        /// 创建一个实例MethodSig
+        /// </summary>
+        /// <param name="retType">Return type</param>
+        public static MethodSig CreateInstance(TypeSig retType) {
 			return new MethodSig(CallingConvention.Default | CallingConvention.HasThis, 0, retType);
 		}
 
@@ -534,40 +534,40 @@ namespace dnlib.DotNet {
 			return new MethodSig(CallingConvention.Default | CallingConvention.HasThis | CallingConvention.Generic, genParamCount, retType, argTypes);
 		}
 
-		/// <summary>
-		/// Default constructor
-		/// </summary>
-		public MethodSig() {
+        /// <summary>
+        /// 默认构造函数
+        /// </summary>
+        public MethodSig() {
 			this.parameters = ThreadSafeListCreator.Create<TypeSig>();
 		}
 
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="callingConvention">Calling convention</param>
-		public MethodSig(CallingConvention callingConvention) {
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="callingConvention">调用约定</param>
+        public MethodSig(CallingConvention callingConvention) {
 			this.callingConvention = callingConvention;
 			this.parameters = ThreadSafeListCreator.Create<TypeSig>();
 		}
 
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="callingConvention">Calling convention</param>
-		/// <param name="genParamCount">Number of generic parameters</param>
-		public MethodSig(CallingConvention callingConvention, uint genParamCount) {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="callingConvention">调用约定</param>
+        /// <param name="genParamCount">通用参数的数量</param>
+        public MethodSig(CallingConvention callingConvention, uint genParamCount) {
 			this.callingConvention = callingConvention;
 			this.genParamCount = genParamCount;
 			this.parameters = ThreadSafeListCreator.Create<TypeSig>();
 		}
 
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="callingConvention">Calling convention</param>
-		/// <param name="genParamCount">Number of generic parameters</param>
-		/// <param name="retType">Return type</param>
-		public MethodSig(CallingConvention callingConvention, uint genParamCount, TypeSig retType) {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="callingConvention">调用约定</param>
+        /// <param name="genParamCount">通用参数的数量</param>
+        /// <param name="retType">返回类型</param>
+        public MethodSig(CallingConvention callingConvention, uint genParamCount, TypeSig retType) {
 			this.callingConvention = callingConvention;
 			this.genParamCount = genParamCount;
 			this.retType = retType;

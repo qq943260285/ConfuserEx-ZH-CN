@@ -62,7 +62,7 @@ namespace dnlib.Examples {
 	public class Example4 {
 		public static void Run() {
             // 这是将要创建的文件
-            string newFileName = @"C:\ctor-test.exe";
+            string newFileName = @"ctor-test.exe";
 
             // 创建模块
             var mod = new ModuleDefUser("ctor-test", Guid.NewGuid(),

@@ -47,10 +47,10 @@ namespace dnlib.DotNet.Emit {
 		}
 	}
 
-	/// <summary>
-	/// CIL (managed code) body
-	/// </summary>
-	public sealed class CilBody : MethodBody {
+    /// <summary>
+    /// CIL（托管代码）正文
+    /// </summary>
+    public sealed class CilBody : MethodBody {
 		bool keepOldMaxStack;
 		bool initLocals;
 		byte headerSize;
@@ -128,10 +128,10 @@ namespace dnlib.DotNet.Emit {
 			get { return instructions.Count > 0; }
 		}
 
-		/// <summary>
-		/// Gets the instructions
-		/// </summary>
-		public ThreadSafe.IList<Instruction> Instructions {
+        /// <summary>
+        /// 获取说明
+        /// </summary>
+        public ThreadSafe.IList<Instruction> Instructions {
 			get { return instructions; }
 		}
 
@@ -142,10 +142,10 @@ namespace dnlib.DotNet.Emit {
 			get { return exceptionHandlers.Count > 0; }
 		}
 
-		/// <summary>
-		/// Gets the exception handlers
-		/// </summary>
-		public ThreadSafe.IList<ExceptionHandler> ExceptionHandlers {
+        /// <summary>
+        /// 获取异常处理程序
+        /// </summary>
+        public ThreadSafe.IList<ExceptionHandler> ExceptionHandlers {
 			get { return exceptionHandlers; }
 		}
 

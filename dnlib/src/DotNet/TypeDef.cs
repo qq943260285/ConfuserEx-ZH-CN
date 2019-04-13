@@ -15,10 +15,10 @@ using ThreadSafe = System.Collections.Generic;
 #endif
 
 namespace dnlib.DotNet {
-	/// <summary>
-	/// A high-level representation of a row in the TypeDef table
-	/// </summary>
-	public abstract class TypeDef : ITypeDefOrRef, IHasCustomAttribute, IHasDeclSecurity, IMemberRefParent, ITypeOrMethodDef, IListListener<FieldDef>, IListListener<MethodDef>, IListListener<TypeDef>, IListListener<EventDef>, IListListener<PropertyDef>, IListListener<GenericParam>, IMemberRefResolver, IMemberDef {
+    /// <summary>
+    /// TypeDef表中行的高级表示形式
+    /// </summary>
+    public abstract class TypeDef : ITypeDefOrRef, IHasCustomAttribute, IHasDeclSecurity, IMemberRefParent, ITypeOrMethodDef, IListListener<FieldDef>, IListListener<MethodDef>, IListListener<TypeDef>, IListListener<EventDef>, IListListener<PropertyDef>, IListListener<GenericParam>, IMemberRefResolver, IMemberDef {
 		/// <summary>
 		/// The row id in its table
 		/// </summary>
@@ -322,10 +322,10 @@ namespace dnlib.DotNet {
 			Interlocked.CompareExchange(ref fields, new LazyList<FieldDef>(this), null);
 		}
 
-		/// <summary>
-		/// From column TypeDef.MethodList
-		/// </summary>
-		public ThreadSafe.IList<MethodDef> Methods {
+        /// <summary>
+        /// 来自列TypeDef.MethodList
+        /// </summary>
+        public ThreadSafe.IList<MethodDef> Methods {
 			get {
 				if (methods == null)
 					InitializeMethods();

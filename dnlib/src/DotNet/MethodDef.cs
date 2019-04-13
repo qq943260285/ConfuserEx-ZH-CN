@@ -15,10 +15,10 @@ using ThreadSafe = System.Collections.Generic;
 #endif
 
 namespace dnlib.DotNet {
-	/// <summary>
-	/// A high-level representation of a row in the Method table
-	/// </summary>
-	public abstract class MethodDef : IHasCustomAttribute, IHasDeclSecurity, IMemberRefParent, IMethodDefOrRef, IMemberForwarded, ICustomAttributeType, ITypeOrMethodDef, IManagedEntryPoint, IListListener<GenericParam>, IListListener<ParamDef>, IMemberDef {
+    /// <summary>
+    /// 方法表中行的高级表示形式
+    /// </summary>
+    public abstract class MethodDef : IHasCustomAttribute, IHasDeclSecurity, IMemberRefParent, IMethodDefOrRef, IMemberForwarded, ICustomAttributeType, ITypeOrMethodDef, IManagedEntryPoint, IListListener<GenericParam>, IListListener<ParamDef>, IMemberDef {
 		internal static readonly UTF8String StaticConstructorName = ".cctor";
 		internal static readonly UTF8String InstanceConstructorName = ".ctor";
 
@@ -132,10 +132,10 @@ namespace dnlib.DotNet {
 		/// <summary/>
 		protected CallingConventionSig signature;
 
-		/// <summary>
-		/// From column Method.ParamList
-		/// </summary>
-		public ThreadSafe.IList<ParamDef> ParamDefs {
+        /// <summary>
+        /// 从列Method.ParamList
+        /// </summary>
+        public ThreadSafe.IList<ParamDef> ParamDefs {
 			get {
 				if (paramDefs == null)
 					InitializeParamDefs();
@@ -438,10 +438,10 @@ namespace dnlib.DotNet {
 			get { return false; }
 		}
 
-		/// <summary>
-		/// Gets/sets the CIL method body. See also <see cref="FreeMethodBody()"/>
-		/// </summary>
-		public CilBody Body {
+        /// <summary>
+        /// 获取/设置CIL方法体。也可以看看<see cref="FreeMethodBody()"/>
+        /// </summary>
+        public CilBody Body {
 			get {
 				if (!methodBody_isInitialized)
 					InitializeMethodBody();

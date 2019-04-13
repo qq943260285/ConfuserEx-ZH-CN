@@ -6,10 +6,10 @@ using dnlib.DotNet.MD;
 using dnlib.Threading;
 
 namespace dnlib.DotNet {
-	/// <summary>
-	/// A high-level representation of a row in the TypeRef table
-	/// </summary>
-	public abstract class TypeRef : ITypeDefOrRef, IHasCustomAttribute, IMemberRefParent, IResolutionScope {
+    /// <summary>
+    /// TypeRef表中行的高级表示形式
+    /// </summary>
+    public abstract class TypeRef : ITypeDefOrRef, IHasCustomAttribute, IMemberRefParent, IResolutionScope {
 		/// <summary>
 		/// The row id in its table
 		/// </summary>
@@ -379,15 +379,15 @@ namespace dnlib.DotNet {
 			: this(module, @namespace, name, null) {
 		}
 
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="module">Owner module</param>
-		/// <param name="namespace">Type namespace</param>
-		/// <param name="name">Type name</param>
-		/// <param name="resolutionScope">Resolution scope (a <see cref="ModuleDef"/>,
-		/// <see cref="ModuleRef"/>, <see cref="AssemblyRef"/> or <see cref="TypeRef"/>)</param>
-		public TypeRefUser(ModuleDef module, UTF8String @namespace, UTF8String name, IResolutionScope resolutionScope) {
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="module">所有者模块</param>
+        /// <param name="namespace">输入命名空间</param>
+        /// <param name="name">类型名称</param>
+        /// <param name="resolutionScope">解析范围 (a <see cref="ModuleDef"/>,
+        /// <see cref="ModuleRef"/>, <see cref="AssemblyRef"/> or <see cref="TypeRef"/>)</param>
+        public TypeRefUser(ModuleDef module, UTF8String @namespace, UTF8String name, IResolutionScope resolutionScope) {
 			this.module = module;
 			this.resolutionScope = resolutionScope;
 			this.resolutionScope_isInitialized = true;

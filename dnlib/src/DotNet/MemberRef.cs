@@ -6,10 +6,10 @@ using System.Threading;
 using dnlib.DotNet.MD;
 
 namespace dnlib.DotNet {
-	/// <summary>
-	/// A high-level representation of a row in the MemberRef table
-	/// </summary>
-	public abstract class MemberRef : IHasCustomAttribute, IMethodDefOrRef, ICustomAttributeType, IField, IContainsGenericParameter {
+    /// <summary>
+    /// MemberRef表中行的高级表示形式
+    /// </summary>
+    public abstract class MemberRef : IHasCustomAttribute, IMethodDefOrRef, ICustomAttributeType, IField, IContainsGenericParameter {
 		/// <summary>
 		/// The row id in its table
 		/// </summary>
@@ -471,24 +471,24 @@ namespace dnlib.DotNet {
 			this.signature = sig;
 		}
 
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="module">Owner module</param>
-		/// <param name="name">Name of method ref</param>
-		/// <param name="sig">Method sig</param>
-		public MemberRefUser(ModuleDef module, UTF8String name, MethodSig sig)
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="module">所有者模块</param>
+        /// <param name="name">方法名称参考</param>
+        /// <param name="sig">方法 sig</param>
+        public MemberRefUser(ModuleDef module, UTF8String name, MethodSig sig)
 			: this(module, name, sig, null) {
 		}
 
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="module">Owner module</param>
-		/// <param name="name">Name of method ref</param>
-		/// <param name="sig">Method sig</param>
-		/// <param name="class">Owner of method</param>
-		public MemberRefUser(ModuleDef module, UTF8String name, MethodSig sig, IMemberRefParent @class) {
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="module">所有者模块</param>
+        /// <param name="name">方法名称参考</param>
+        /// <param name="sig">方法本身</param>
+        /// <param name="class">方法的所有者</param>
+        public MemberRefUser(ModuleDef module, UTF8String name, MethodSig sig, IMemberRefParent @class) {
 			this.module = module;
 			this.name = name;
 			this.@class = @class;

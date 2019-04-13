@@ -3,15 +3,15 @@
 using System;
 
 namespace dnlib.DotNet {
-	/// <summary>
-	/// Method impl attributes, see CorHdr.h/CorMethodImpl
-	/// </summary>
-	[Flags]
+    /// <summary>
+    /// 方法impl属性，请参阅CorHdr.h / CorMethodImpl
+    /// </summary>
+    [Flags]
 	public enum MethodImplAttributes : ushort {
 		/// <summary>Flags about code type.</summary>
 		CodeTypeMask		= 0x0003,
-		/// <summary>Method impl is IL.</summary>
-		IL					= 0x0000,
+        /// <summary>方法impl是IL。</summary>
+        IL = 0x0000,
 		/// <summary>Method impl is native.</summary>
 		Native				= 0x0001,
 		/// <summary>Method impl is OPTIL</summary>
@@ -23,8 +23,8 @@ namespace dnlib.DotNet {
 		ManagedMask			= 0x0004,
 		/// <summary>Method impl is unmanaged, otherwise managed.</summary>
 		Unmanaged			= 0x0004,
-		/// <summary>Method impl is managed.</summary>
-		Managed				= 0x0000,
+        /// <summary>方法impl被管理。</summary>
+        Managed = 0x0000,
 
 		/// <summary>Indicates method is defined; used primarily in merge scenarios.</summary>
 		ForwardRef			= 0x0010,

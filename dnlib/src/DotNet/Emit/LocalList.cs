@@ -12,10 +12,10 @@ using ThreadSafe = System.Collections.Generic;
 #endif
 
 namespace dnlib.DotNet.Emit {
-	/// <summary>
-	/// A collection of <see cref="Local"/>s
-	/// </summary>
-	[DebuggerDisplay("Count = {Count}")]
+    /// <summary>
+    /// 一个集合 <see cref="Local"/>s
+    /// </summary>
+    [DebuggerDisplay("Count = {Count}")]
 	public sealed class LocalList : IListListener<Local>, ThreadSafe.IList<Local> {
 		readonly LazyList<Local> locals;
 
@@ -221,35 +221,35 @@ namespace dnlib.DotNet.Emit {
 #endif
 	}
 
-	/// <summary>
-	/// A method local
-	/// </summary>
-	public sealed class Local : IVariable {
+    /// <summary>
+    /// 一种方法本地
+    /// </summary>
+    public sealed class Local : IVariable {
 		TypeSig typeSig;
 		int index;
 		string name;
 		int pdbAttributes;
 
-		/// <summary>
-		/// Gets/sets the type of the local
-		/// </summary>
-		public TypeSig Type {
+        /// <summary>
+        /// 获取/设置本地的类型
+        /// </summary>
+        public TypeSig Type {
 			get { return typeSig; }
 			set { typeSig = value; }
 		}
 
-		/// <summary>
-		/// Local index
-		/// </summary>
-		public int Index {
+        /// <summary>
+        /// 本地指数
+        /// </summary>
+        public int Index {
 			get { return index; }
 			set { index = value; }
 		}
 
-		/// <summary>
-		/// Gets/sets the name
-		/// </summary>
-		public string Name {
+        /// <summary>
+        /// 获取/设置名称
+        /// </summary>
+        public string Name {
 			get { return name; }
 			set { name = value; }
 		}
@@ -263,16 +263,27 @@ namespace dnlib.DotNet.Emit {
 			set { pdbAttributes = value; }
 		}
 
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="typeSig">The type</param>
-		public Local(TypeSig typeSig) {
-			this.typeSig = typeSig;
-		}
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="typeSig">The type</param>
+        public Local(TypeSig typeSig)
+        {
+            this.typeSig = typeSig;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="typeSig"></param>
+        /// <param name="name"></param>
+        public Local(TypeSig typeSig,string name)
+        {
+            this.typeSig = typeSig;
+            this.Name = name;
+        }
 
-		/// <inheritdoc/>
-		public override string ToString() {
+        /// <inheritdoc/>
+        public override string ToString() {
 			var n = name;
 			if (string.IsNullOrEmpty(n))
 				return string.Format("V_{0}", Index);
